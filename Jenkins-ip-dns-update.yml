@@ -1,0 +1,13 @@
+- name: update jenkins IP in Route53
+  hosts: localhost
+  tasks:
+    - name: update jenkins IP
+      amazon.aws.route53:
+        state: present
+        zone: malleswaridevops.online
+        record: jenkins.malleswaridevops.online
+        type: A
+        ttl: 10
+        value: 54.234.168.127
+        wait: true
+
